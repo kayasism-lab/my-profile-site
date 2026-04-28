@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where jq *)",
+      "Bash(node -e \"let d='';process.stdin.on\\('data',c=>d+=c\\);process.stdin.on\\('end',\\(\\)=>{try{const j=JSON.parse\\(d\\);const m=j.model&&j.model.display_name||'Claude';const s=j.session_name?' | '+j.session_name:'';const c=j.context_window&&j.context_window.used_percentage?' | Context: '+Math.round\\(j.context_window.used_percentage\\)+'%':'';console.log\\(m+s+c\\)}catch\\(e\\){console.log\\('Claude'\\)}}\\)\")",
+      "Bash(node \"C:/Users/kayas/.claude/statusline.js\")",
+      "Bash(echo '{\"model\":{\"display_name\":\"claude-sonnet-4-6\"},\"workspace\":{\"current_dir\":\"C:\\\\\\\\Users\\\\\\\\kayas\\\\\\\\Desktop\\\\\\\\workspace\\\\\\\\my-profile-site\"},\"context_window\":{\"used_percentage\":10,\"current_usage\":{\"input_tokens\":1000,\"output_tokens\":200}}}')",
+      "Bash(git *)"
+    ]
+  },
+  "disabledMcpjsonServers": [
+    "context7",
+    "sequential-thinking"
+  ]
+}
