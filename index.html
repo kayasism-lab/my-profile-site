@@ -4,272 +4,238 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>문성환 — 풀스택 개발자</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            dark: '#0f172a',
-            card: '#1e293b',
-            primary: '#22c55e',
-            secondary: '#22d3ee',
-            accent: '#4ade80',
-          }
-        }
-      }
-    }
+            navy: { DEFAULT: '#0a1628', mid: '#0f2744', card: '#132a45' },
+            teal: { DEFAULT: '#14b8a6', dark: '#0d9488' },
+          },
+          fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
   </script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-dark text-slate-200 font-sans">
+<body class="bg-white text-slate-800 font-sans font-display antialiased">
 
-  <!-- 네비게이션 -->
   <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#hero" class="text-2xl font-bold gradient-text">MOON S.H</a>
-      <ul class="hidden md:flex gap-8 text-slate-300 text-sm font-medium">
-        <li><a href="#about" class="hover:text-primary transition-colors">About</a></li>
-        <li><a href="#skills" class="hover:text-primary transition-colors">Skills</a></li>
-        <li><a href="#projects" class="hover:text-primary transition-colors">Projects</a></li>
-        <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
-      </ul>
-      <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-1" aria-label="메뉴">
-        <span class="w-6 h-0.5 bg-slate-300 block"></span>
-        <span class="w-6 h-0.5 bg-slate-300 block"></span>
-        <span class="w-6 h-0.5 bg-slate-300 block"></span>
-      </button>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="nav-inner flex items-center justify-between gap-4 py-3 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+        <ul class="hidden lg:flex items-center gap-8 text-sm font-semibold">
+          <li><a href="#about" class="nav-link active py-1">About</a></li>
+          <li><a href="#skills" class="nav-link py-1">Tech Writing</a></li>
+          <li><a href="#projects" class="nav-link py-1">Developer</a></li>
+          <li><a href="#projects" class="nav-link py-1">Blog</a></li>
+        </ul>
+        <a href="#hero" class="flex items-center justify-center gap-2 lg:justify-self-center">
+          <span class="logo-icon-box inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 border border-white/20">
+            <svg class="h-5 w-5 text-teal" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M12 22V12M12 12L4 7M12 12l8-5" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+            </svg>
+          </span>
+          <span class="logo-text text-lg font-extrabold tracking-tight">MOON DEV</span>
+        </a>
+        <div class="flex items-center justify-end gap-3">
+          <a href="https://github.com/kayasism" target="_blank" rel="noopener" class="hidden sm:inline-flex p-2 rounded-lg hover:bg-white/10 transition-colors" aria-label="GitHub">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="#contact" class="btn-teal text-sm shadow-lg shadow-teal/20">Contact Me</a>
+          <button id="menuBtn" type="button" class="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors" aria-label="메뉴">
+            <span class="w-6 h-0.5 bg-current block mb-1.5"></span>
+            <span class="w-6 h-0.5 bg-current block mb-1.5"></span>
+            <span class="w-6 h-0.5 bg-current block"></span>
+          </button>
+        </div>
+      </div>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden bg-card/95 backdrop-blur-sm border-t border-slate-700">
-      <ul class="flex flex-col px-6 py-4 gap-4 text-slate-300 text-sm font-medium">
-        <li><a href="#about" class="hover:text-primary transition-colors">About</a></li>
-        <li><a href="#skills" class="hover:text-primary transition-colors">Skills</a></li>
-        <li><a href="#projects" class="hover:text-primary transition-colors">Projects</a></li>
-        <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10 bg-navy/98 backdrop-blur-md">
+      <ul class="flex flex-col px-4 py-4 gap-3 text-sm font-semibold">
+        <li><a href="#about" class="block py-2 text-white">About</a></li>
+        <li><a href="#skills" class="block py-2 text-white">Tech Writing</a></li>
+        <li><a href="#projects" class="block py-2 text-white">Developer</a></li>
+        <li><a href="#projects" class="block py-2 text-white">Blog</a></li>
+        <li><a href="https://github.com/kayasism" target="_blank" rel="noopener" class="block py-2 text-teal">GitHub</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- 커리큘럼 사이드바 -->
   <aside id="curriculum-sidebar" class="curriculum-sidebar">
     <div class="sidebar-header">
       <h3>포트폴리오</h3>
-      <button id="sidebar-close-btn" aria-label="사이드바 닫기">×</button>
+      <button id="sidebar-close-btn" type="button" aria-label="사이드바 닫기">×</button>
     </div>
     <div class="sidebar-tabs">
-      <button class="tab-btn active" data-tab="intro">소개</button>
-      <button class="tab-btn" data-tab="projects">프로젝트</button>
+      <button type="button" class="tab-btn active" data-tab="intro">소개</button>
+      <button type="button" class="tab-btn" data-tab="projects">프로젝트</button>
     </div>
     <div class="sidebar-content">
-
-      <!-- 소개 탭 -->
       <div class="tab-content" data-tab="intro">
-        <div class="section-item active" data-section="hero">
-          <span class="item-number">01</span>
-          <span class="item-check">✓</span>
-          <div class="item-info">
-            <span class="item-title">안녕하세요</span>
-            <span class="item-meta">히어로 섹션</span>
-          </div>
-        </div>
-        <div class="section-item" data-section="about">
-          <span class="item-number">02</span>
-          <span class="item-check">✓</span>
-          <div class="item-info">
-            <span class="item-title">About Me</span>
-            <span class="item-meta">자기소개</span>
-          </div>
-        </div>
-        <div class="section-item" data-section="skills">
-          <span class="item-number">03</span>
-          <span class="item-check">✓</span>
-          <div class="item-info">
-            <span class="item-title">Tech Stack</span>
-            <span class="item-meta">기술 스택</span>
-          </div>
-        </div>
-        <div class="section-item" data-section="contact">
-          <span class="item-number">04</span>
-          <span class="item-check">✓</span>
-          <div class="item-info">
-            <span class="item-title">Get In Touch</span>
-            <span class="item-meta">연락처</span>
-          </div>
-        </div>
+        <div class="section-item active" data-section="hero"><span class="item-number">01</span><span class="item-check">✓</span><div class="item-info"><span class="item-title">히어로</span><span class="item-meta">소개</span></div></div>
+        <div class="section-item" data-section="about"><span class="item-number">02</span><span class="item-check">✓</span><div class="item-info"><span class="item-title">About</span><span class="item-meta">자기소개</span></div></div>
+        <div class="section-item" data-section="skills"><span class="item-number">03</span><span class="item-check">✓</span><div class="item-info"><span class="item-title">Tech</span><span class="item-meta">스택</span></div></div>
+        <div class="section-item" data-section="contact"><span class="item-number">04</span><span class="item-check">✓</span><div class="item-info"><span class="item-title">연락</span><span class="item-meta">문의</span></div></div>
       </div>
-
-      <!-- 프로젝트 탭 -->
-      <div class="tab-content" data-tab="projects" style="display:none">
-        <div class="section-item" data-section="projects">
-          <span class="item-number">01</span>
-          <span class="item-check">✓</span>
-          <div class="item-info">
-            <span class="item-title">이커머스 웹앱</span>
-            <span class="item-meta">React · Node.js · MongoDB</span>
-          </div>
-        </div>
-        <div class="section-item" data-section="projects">
-          <span class="item-number">02</span>
-          <span class="item-check">✓</span>
-          <div class="item-info">
-            <span class="item-title">실시간 채팅 앱</span>
-            <span class="item-meta">Vue.js · Socket.io · Redis</span>
-          </div>
-        </div>
-        <div class="section-item" data-section="projects">
-          <span class="item-number">03</span>
-          <span class="item-check">✓</span>
-          <div class="item-info">
-            <span class="item-title">포트폴리오 사이트</span>
-            <span class="item-meta">HTML · CSS · JavaScript</span>
-          </div>
-        </div>
+      <div class="tab-content hidden" data-tab="projects">
+        <div class="section-item" data-section="projects"><span class="item-number">01</span><span class="item-check">✓</span><div class="item-info"><span class="item-title">이커머스</span><span class="item-meta">풀스택</span></div></div>
+        <div class="section-item" data-section="projects"><span class="item-number">02</span><span class="item-check">✓</span><div class="item-info"><span class="item-title">채팅 앱</span><span class="item-meta">실시간</span></div></div>
       </div>
-
     </div>
   </aside>
 
-  <!-- 메인 콘텐츠 -->
   <div id="main-content">
 
-    <!-- 히어로 -->
-    <section id="hero" class="min-h-screen flex items-center justify-center grid-bg relative overflow-hidden">
-      <div class="text-center max-w-3xl px-6 fade-in">
-        <p class="text-secondary text-sm md:text-base mb-4 tracking-widest uppercase font-medium">안녕하세요, 저는</p>
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-4 gradient-text typing-cursor">문성환</h1>
-        <h2 class="text-xl md:text-3xl text-slate-300 mb-6 font-medium">
-          풀스택 <span class="text-primary font-bold">개발자</span>
-        </h2>
-        <p class="text-slate-400 text-base md:text-lg mb-10 leading-relaxed">
-          사용자 경험을 최우선으로 생각하는 개발자입니다.<br>
-          프론트엔드부터 백엔드까지 전체 스택을 아우르며,<br>
-          클린 코드와 지속 가능한 아키텍처를 추구합니다.
-        </p>
-        <div class="flex gap-4 justify-center flex-wrap">
-          <a href="#projects" class="btn-primary">프로젝트 보기</a>
-          <a href="#contact" class="btn-outline">연락하기</a>
+    <section id="hero" class="hero-navy text-slate-200 pt-24 pb-36 lg:pb-44">
+      <div class="relative z-[1] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <a href="#skills" class="latest-pill fade-in">
+          <span class="tag">Latest Article</span>
+          <span class="text-lg" aria-hidden="true">🐍</span>
+          <span class="opacity-90">Python으로 API 성능 잡기 — <span class="text-slate-400 font-normal">2026.04</span></span>
+        </a>
+
+        <div class="mt-10 lg:mt-14 grid lg:grid-cols-2 gap-10 lg:gap-12 items-end">
+          <div class="fade-in max-w-xl">
+            <p class="text-lg md:text-xl text-white/90 font-medium">안녕하세요,</p>
+            <h1 class="mt-2 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">저는 문성환입니다</h1>
+            <div class="teal-rule" aria-hidden="true"></div>
+            <p class="text-slate-400 text-base md:text-lg leading-relaxed">
+              사용자 경험을 최우선으로 하는 풀스택 개발자입니다. 프론트엔드부터 백엔드까지 일관된 품질로 서비스를 완성합니다.
+            </p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="float-badge float-badge-left" aria-hidden="true">&lt;/&gt;</div>
+            <div class="float-badge float-badge-right" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.2" fill="#61DAFB"/><ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" stroke-width="1.3" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" stroke-width="1.3" transform="rotate(-60 12 12)"/></svg>
+            </div>
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=640&q=80" alt="프로필" width="640" height="800" class="rounded-lg lg:rounded-none lg:bg-transparent">
+          </div>
         </div>
       </div>
-      <div class="absolute top-24 right-16 w-72 h-72 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
-      <div class="absolute bottom-24 left-16 w-56 h-56 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="py-24 px-6">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="section-title">About <span class="text-primary">Me</span></h2>
-        <p class="text-slate-400 text-center mt-4 max-w-xl mx-auto leading-relaxed">
-          다양한 도메인에서 실용적인 소프트웨어를 만들어온 풀스택 개발자입니다.
-          새로운 기술에 빠르게 적응하고, 팀과 함께 성장하는 것을 즐깁니다.
-        </p>
+    <div class="stats-strip">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="stat-card fade-item"><div class="num">5+</div><div class="label">Years Experience</div></div>
+        <div class="stat-card fade-item"><div class="num">30+</div><div class="label">Complete Projects</div></div>
+        <div class="stat-card fade-item"><div class="num">50+</div><div class="label">Satisfied Customers</div></div>
+      </div>
+    </div>
+
+    <section id="about" class="bg-white pt-4 pb-20 lg:pb-28 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-navy mb-8">About 문성환</h2>
+          <div class="about-photo-wrap mx-auto lg:mx-0">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=560&q=80" alt="문성환 프로필" width="560" height="700">
+            <div class="badge-check" aria-hidden="true">✓</div>
+            <div class="soft-skills-card">
+              <div class="soft-row"><span>Communicate</span><div class="soft-bar"><i style="width:92%"></i></div></div>
+              <div class="soft-row"><span>Trust</span><div class="soft-bar"><i style="width:88%"></i></div></div>
+              <div class="soft-row"><span>Follow-Through</span><div class="soft-bar"><i style="width:95%"></i></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="pt-2 lg:pt-14">
+          <h3 class="text-2xl font-bold text-navy mb-4">항상 배우는 자세</h3>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            다양한 도메인에서 실용적인 소프트웨어를 만들어 왔습니다. 새로운 기술 트렌드를 빠르게 습득하고, 코드 리뷰와 페어 프로그래밍으로 팀 전체의 속도를 높이는 일을 좋아합니다.
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-10">
+            클라우드 네이티브와 관측 가능성(observability)을 기본에 두어, 장애에 강하고 확장 가능한 구조를 설계합니다.
+          </p>
+          <h3 class="text-2xl font-bold text-navy mb-4">Character</h3>
+          <p class="text-slate-600 leading-relaxed">
+            약속한 일정과 품질을 지키고, 이해관계자와의 소통을 명확히 하는 것을 가장 중요한 가치로 삼습니다. 문제를 숨기지 않고 빠르게 공유하며 해결해 나갑니다.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- 기술 스택 -->
-    <section id="skills" class="pb-24 px-6">
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
       <div class="max-w-4xl mx-auto">
-        <h2 class="section-title">Tech <span class="text-secondary">Stack</span></h2>
-        <div class="mt-10 space-y-8">
+        <h2 class="section-title">Tech <span class="gradient-text">Stack</span></h2>
+        <div class="mt-12 space-y-8">
           <div class="fade-item">
-            <p class="text-slate-500 mb-3 text-xs tracking-widest uppercase">Frontend</p>
+            <p class="text-slate-500 mb-3 text-xs tracking-widest uppercase font-semibold">Frontend</p>
             <div class="flex flex-wrap gap-2">
-              <span class="badge badge-primary">HTML5</span>
-              <span class="badge badge-primary">CSS3</span>
-              <span class="badge badge-primary">JavaScript</span>
-              <span class="badge badge-primary">React</span>
-              <span class="badge badge-primary">Vue.js</span>
-              <span class="badge badge-primary">Angular</span>
+              <span class="badge badge-primary">HTML5</span><span class="badge badge-primary">CSS3</span><span class="badge badge-primary">JavaScript</span>
+              <span class="badge badge-primary">React</span><span class="badge badge-primary">Vue.js</span>
             </div>
           </div>
           <div class="fade-item">
-            <p class="text-slate-500 mb-3 text-xs tracking-widest uppercase">Backend</p>
+            <p class="text-slate-500 mb-3 text-xs tracking-widest uppercase font-semibold">Backend</p>
             <div class="flex flex-wrap gap-2">
-              <span class="badge badge-secondary">Node.js</span>
-              <span class="badge badge-secondary">Python</span>
-              <span class="badge badge-secondary">Java</span>
-              <span class="badge badge-secondary">Express</span>
-              <span class="badge badge-secondary">MongoDB</span>
+              <span class="badge badge-secondary">Node.js</span><span class="badge badge-secondary">Python</span><span class="badge badge-secondary">Express</span><span class="badge badge-secondary">MongoDB</span>
             </div>
           </div>
           <div class="fade-item">
-            <p class="text-slate-500 mb-3 text-xs tracking-widest uppercase">DevOps</p>
+            <p class="text-slate-500 mb-3 text-xs tracking-widest uppercase font-semibold">DevOps</p>
             <div class="flex flex-wrap gap-2">
-              <span class="badge badge-accent">Git</span>
-              <span class="badge badge-accent">Docker</span>
-              <span class="badge badge-accent">AWS</span>
-              <span class="badge badge-accent">CI/CD</span>
+              <span class="badge badge-accent">Git</span><span class="badge badge-accent">Docker</span><span class="badge badge-accent">AWS</span><span class="badge badge-accent">CI/CD</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 프로젝트 -->
-    <section id="projects" class="py-24 px-6 bg-card/20">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="section-title">Featured <span class="text-primary">Projects</span></h2>
-        <div class="mt-12 grid md:grid-cols-3 gap-6">
-
-          <div class="project-card fade-item">
-            <div class="h-40 bg-gradient-to-br from-primary/50 to-primary/10 flex items-center justify-center text-5xl">🛒</div>
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-900 mb-12">My Projects</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="project-card fade-item">
+            <div class="h-40 bg-gradient-to-br from-teal/30 to-cyan-500/10 flex items-center justify-center text-5xl">🛒</div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">이커머스 웹앱</h3>
-              <p class="text-slate-400 text-sm mb-4 leading-relaxed">React와 Node.js로 구축한 풀스택 쇼핑몰. 실시간 재고 관리와 결제 시스템을 구현했습니다.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
-              </div>
-              <a href="https://github.com/kayasism" target="_blank" rel="noopener" class="text-secondary text-sm hover:underline">GitHub →</a>
+              <h3 class="text-xl font-bold text-navy mb-2">이커머스 웹앱</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">React와 Node.js 기반 풀스택 쇼핑몰. 재고·결제 흐름을 구현했습니다.</p>
+              <div class="flex flex-wrap gap-2 mb-4"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+              <a href="https://github.com/kayasism" target="_blank" rel="noopener" class="text-teal text-sm font-semibold hover:underline">GitHub →</a>
             </div>
-          </div>
-
-          <div class="project-card fade-item">
-            <div class="h-40 bg-gradient-to-br from-secondary/50 to-secondary/10 flex items-center justify-center text-5xl">💬</div>
+          </article>
+          <article class="project-card fade-item">
+            <div class="h-40 bg-gradient-to-br from-cyan-500/25 to-teal/10 flex items-center justify-center text-5xl">💬</div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">실시간 채팅 앱</h3>
-              <p class="text-slate-400 text-sm mb-4 leading-relaxed">Socket.io 기반 실시간 채팅 플랫폼. 채팅방, 1:1 메시지, 알림 기능을 지원합니다.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tag">Vue.js</span><span class="tag">Socket.io</span><span class="tag">Redis</span>
-              </div>
-              <a href="https://github.com/kayasism" target="_blank" rel="noopener" class="text-secondary text-sm hover:underline">GitHub →</a>
+              <h3 class="text-xl font-bold text-navy mb-2">실시간 채팅 앱</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">Socket.io 기반 채팅방·알림 기능을 구현했습니다.</p>
+              <div class="flex flex-wrap gap-2 mb-4"><span class="tag">Vue.js</span><span class="tag">Socket.io</span><span class="tag">Redis</span></div>
+              <a href="https://github.com/kayasism" target="_blank" rel="noopener" class="text-teal text-sm font-semibold hover:underline">GitHub →</a>
             </div>
-          </div>
-
-          <div class="project-card fade-item">
-            <div class="h-40 bg-gradient-to-br from-accent/50 to-accent/10 flex items-center justify-center text-5xl">🌐</div>
+          </article>
+          <article class="project-card fade-item">
+            <div class="h-40 bg-gradient-to-br from-teal/20 to-slate-200/40 flex items-center justify-center text-5xl">🌐</div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">포트폴리오 사이트</h3>
-              <p class="text-slate-400 text-sm mb-4 leading-relaxed">HTML, CSS, JavaScript와 Tailwind CSS로 제작한 개인 포트폴리오 웹사이트입니다.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-              </div>
-              <a href="https://github.com/kayasism" target="_blank" rel="noopener" class="text-secondary text-sm hover:underline">GitHub →</a>
+              <h3 class="text-xl font-bold text-navy mb-2">포트폴리오 사이트</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">HTML, CSS, JavaScript와 반응형 레이아웃으로 제작했습니다.</p>
+              <div class="flex flex-wrap gap-2 mb-4"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+              <a href="https://github.com/kayasism" target="_blank" rel="noopener" class="text-teal text-sm font-semibold hover:underline">GitHub →</a>
             </div>
-          </div>
-
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- 연락처 -->
-    <section id="contact" class="py-24 px-6">
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
       <div class="max-w-2xl mx-auto text-center">
-        <h2 class="section-title">Get In <span class="text-primary">Touch</span></h2>
-        <p class="text-slate-400 mt-4 mb-10 text-base md:text-lg leading-relaxed">
-          새로운 프로젝트나 협업 기회에 대해 이야기하고 싶으신가요?<br>
-          언제든지 연락해 주세요!
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="text-slate-600 mt-4 mb-10 text-base md:text-lg leading-relaxed">
+          새로운 프로젝트나 협업에 대해 이야기하고 싶으시다면 언제든지 연락 주세요.
         </p>
         <div class="contact-card fade-item">
           <div class="flex justify-center gap-4 flex-wrap">
             <a href="mailto:kayasism@gmail.com" class="btn-primary">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-              </svg>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               이메일 보내기
             </a>
             <a href="https://github.com/kayasism" target="_blank" rel="noopener" class="btn-outline">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               GitHub
             </a>
           </div>
@@ -277,12 +243,10 @@
       </div>
     </section>
 
-    <!-- 푸터 -->
-    <footer class="py-6 text-center text-slate-600 text-sm border-t border-slate-800">
+    <footer class="py-8 text-center text-slate-500 text-sm border-t border-slate-200 bg-white">
       <p>© 2026 문성환 · Built with HTML, CSS &amp; JavaScript</p>
     </footer>
-
-  </div><!-- /main-content -->
+  </div>
 
   <script src="script.js"></script>
 </body>
